@@ -1,0 +1,876 @@
+ HYPERCARE  
+No. Fault code Description Recommended Actions
+1 EMC Door does not close - To check door contacts condition and alignment at Level XX (Same level)
+- To check car door contact condition and alignment (Multiple levels)
+2 EMC Door does not open 
+- To check clearance between door interlock roller and door cam/coupler at Level XX (Same 
+level)
+- To check the condition and operation of car door cam/coupler (Multiple levels)
+3 EMC Door zone failure 
+- To check 30/B30 switches signals (Multiple levels - KDL/KDM)
+- To check clearances between 30/B30 vanes and switches at Level XX (Same level - KDM)
+- To check clearances between 30/B30 magnets and switches at Level XX (Same level - KDL)
+- To check clearance between HIPO plate and reader at Level XX (Same level - KDH)
+- To check HIPO reader signal (Multiple levels - KDH)
+4 EMC Car position fault
+- To check oscillator switches signals (Multiple levels - KDL/KDM)
+- To check clearance between leveling vane and oscillator switches at Level XX (Same level - 
+KDL/KDM)
+5 EMC Car position fault + Failure to start  (At Lower or upper 
+Level) - To check clearance between ETSL switches and magnets
+6 EMC Start timeout - To check fault code on LCECPU (Multiple levels)
+- To check root cause at Level XX (Same level)
+7 EMC Drive system malfunction - To check fault code on LCECPU (Multiple levels)
+- To check root cause at Level XX (Same level)
+8 EMC Drive time supervision - To check fault code on LCECPU (Multiple levels)
+- To check root cause at Level XX (Same level)
+9 EMC Car door contact bouncing 
+- To check door contacts condition and alignment at Level XX (Same level)
+- To check the adjustment and operation of car door cam/coupler  (Multiple levels)
+- To check and change parameter menu 1-27 from 0.10 to 0.15
+10 EMC Start permit relay failure - To check main contactor wirings (201:1 201:3 201:4)
+- To check LCEADO board, connectors and wirings
+11 F0007 Door zone switch stuck 
+- To check 30/B30 switches signals (Multiple levels - KDL/KDM)
+- To check clearances between 30/B30 vanes and switches at Level XX (Same level - KDM)
+- To check clearances between 30/B30 magnets and switches at Level XX (Same level - KDL)
+- To check clearance between HIPO plate and reader at Level XX (Same level - KDH)
+- To check HIPO reader signal (Multiple levels - KDH)
+12 F0008 Insufficient or faulty NVRAM on LCECPU - To reset NVRAM parameter 1-99 on LCECPU
+13 F0021 Safety circuit broken 
+- To check root cause on site
+- To check LCEADO board, connectors and wirings (if spamming)
+- To restart E-Link on site (If faults detected on E-Link/Konesupport but not LCECPU)
+14 F0022 Shaft door contact opened during drive - To check door contacts condition and alignment at Level XX (Same level)
+- To check car door contact condition and alignment (Multiple levels)
+15 F0023 Car door contact opened during drive
+- To check door contacts condition and alignment at Level XX (Same level)
+- To check car door contact condition and alignment (Multiple levels)
+- To check the adjustment and operation of car door cam/coupler  (Multiple levels)
+- To check door alignment
+- To check wiring between CCB/CCBN to LCECPU (Multiple levels)
+16 F0025 Start permit fault
+- To check main contactor wirings (201:1 201:3 201:4)
+- To check brake module and wirings
+- To check brake microswitch / contact
+- To check LCEADO board, connectors and wirings
+17 F0025 and F0058 - To check brake module and wirings
+18 F0026 Drive system fault - To check main contactor wirings (201:1 201:3 201:4)
+- To check power supply
+19 F0036 Main contactor released during drive - To check main contactor wirings (201:1 201:3 201:4) (Multiple levels)
+- To check door contacts condition and alignment at Level XX (Same level)
+20 F0042 Car light supply supervision 
+- To check lighting condition
+- To check LCECCBN board, connectors and wirings
+- If EFA occurs with F0042, possibility as serviceman activity (Lighting breaker turned off)
+21 F0044 Door closing failed 
+- To check door contacts condition and alignment at Level XX (Same level)
+- To check car door contact condition and alignment (Multiple levels)
+- To check car door shoe condition (car door shoe loosen)
+- Will be omitted if detected on service elevators
+22 F0046 Door contact mismatch - To check door contacts condition and alignment at Level XX (Same level)
+- To check car door contact condition and alignment (Multiple levels)
+23 F0051 Start failed / Failure to start - To check door contacts condition and alignment at Level XX (Same level)
+- To check main contactor wirings (201:1 201:3 201:4) (Multiple levels)
+24 F0058 Non drive timeout - To check root cause on site (Multiple levels)
+- To check root cause at Level XX (Same level)
+25 F0062 Inspection direction buttons stuck on - To check inspection direction buttons and wirings
+- To check connection of XM11/3 on LCECPU and XB12/2 on LCECCBN 
+26 F0071 30 or B30 door zone missing
+- To check 30/B30 switches signals (Multiple levels - KDL/KDM)
+- To check clearances between 30/B30 vanes and switches at Level XX (Same level - KDM)
+- To check clearances between 30/B30 magnets and switches at Level XX (Same level - KDL)
+- To check clearance between HIPO plate and reader at Level XX (Same level - KDH)
+- To check HIPO reader signal (Multiple levels - KDH) 
+27 F0072 61U input stuck fault - To check 61 U switch signal (Multiple levels)
+- To check clearances between 61 U vane and switch at Level XX (Same level)
+28 F0073 61N input missing - To check 61 N switch signal (Multiple levels)
+- To check clearances between 61 N vane and switch at Level XX (Same level)
+EMC and LCE Faults
+ HYPERCARE  
+29 F0074 61N input stuck fault - To check 61 N switch signal (Multiple levels)
+- To check clearances between 61 N vane and switch at Level XX (Same level)
+30 F0075 61U input missing - To check 61 U switch signal (Multiple levels)
+- To check clearances between 61 U vane and switch at Level XX (Same level)
+31 F0076 553 relay in door zone supervision circuit failure
+- To check LCEADO board, connectors and wirings (Multiple levels)
+- To check 30/B30 switches signals (Multiple levels - KDL/KDM)
+- To check clearances between 30/B30 vanes and switches at Level XX (Same level - KDM)
+- To check clearances between 30/B30 magnets and switches at Level XX (Same level - KDL)
+32 F0077 Door open limit fault
+- To check clearance between door interlock roller and door cam/coupler at Level XX (Same 
+level)
+- To check door open limit switch (Multiple levels)
+- To check AMD board, connectors and wirings
+- To perform AMD door learning
+- Increase door contact filtering time menu 1_27 from 0.10 to 0.50 (Solution for F0077 spam)
+33 F0077 with Door does not close - To check door contacts condition and alignment at Level XX (Same level)
+- To check car door contact condition and alignment (Multiple levels)
+34 F0077 with Door does not open 
+- To check clearance between door interlock roller and door cam/coupler at Level XX (Same 
+level)
+- To check the condition and operation of car door cam/coupler (Multiple levels)
+35 F0078 Stuck car call button - To check car call button for Level XX
+- To check LCECOB and LCECEB board, connectors and wirings (Multiple button)
+36 F0079 Stuck landing call button - To check landing call button at Level XX
+- To check LCEFCB board, connectors and wirings at Level XX 
+37 F0080 Lock check (553) circuit failed - To check LCEADO board, connectors and wirings
+- To check door contacts condition and alignment (if detected with F0044)
+38 F0081 Releveling failures
+- To check oscillator switches signals (Multiple levels - KDM)
+- To check clearance between leveling vanes and oscillator switches at Level XX (KDM - Same 
+level) 
+- To check clearance between HIPO plate and reader at Level XX (Same level - KDH)
+- To check HIPO reader signal (Multiple levels - KDH) 
+- Drive fine tuning
+39 F0081 with Encoder pulses missing F0226 and Start 
+failed F0051
+- To check door contacts condition and alignment at Level XX (Same level)
+- To check car door contact condition and alignment (Multiple levels)
+40 F0082 Incorrect door zone
+- To check 30/B30 switches signals (Multiple levels - KDL/KDM)
+- To check clearances between 30/B30 vanes and switches at Level XX (Same level - KDM)
+- To check clearances between 30/B30 magnets and switches at Level XX (Same level - KDL)
+- To check clearance between HIPO plate and reader at Level XX (Same level - KDH)
+- To check HIPO reader signal (Multiple levels - KDH)
+41 F0083 Position lost
+- To check oscillator switches signals (Multiple levels - KDM)
+- To check clearance between leveling vanes and oscillator switches at Level XX (KDM - Same 
+level) 
+- To check clearance between HIPO plate and reader at Level XX (Same level - KDH)
+- To check HIPO reader signal (Multiple levels - KDH) 
+42 F0095 Hall door contact does not open
+- To check LCEADO board, connectors and wirings (Multiple levels)
+- To check clearance between door interlock roller and door cam/coupler at Level XX (Same 
+level)
+43 F0110 Drive temperature too high/low - To check drive fan
+44 F0126 Brake sequence fault - To check brake module and wirings
+45 F0145 EBD device failed - To check EBD device
+46 F0146 EBD battery failed - To check EBD battery
+47 F0150 NTS invalid switch fault - To check clearance between NTS switches and magnets
+48 F0151 V1 NTS faulty switch - To check clearance between NTS switches and magnets
+- To check DCBG board, connectors and wirings
+49 F0152 V1 NTS stopping fault - To check clearance between NTS switches and magnets
+- To check clearance between 77U/N/S magnets and switches (Speed <2.5m/s)
+50 F0152 with F0021 - To update LCECPU software 9.5.5 (Software bugs)
+51 F0169 Low battery detected - To check car top battery
+52 F0172 24 VDC car or shaft supply power missing - To check 24 VDC input at LCECPU
+53 F0177 & F0178 ADON channel detects overspeed governor trip - To check root cause on site
+54 F0181 & F0182 ADON2 detects loss of 24Vdc or 230Vac power - To check LCEREC board, connectors and wirings
+55 F0187 & F0188 Ebrake/Rope gripper failed to pick - To check E-Brake micro switch
+56 F0189 & F0190 Ebrake/Rope gripper failed to drop - To check E-Brake micro switch 
+57 F0189 & F0190 with Start permit relay failure F0025
+- To check E-Brake micro switch
+- To check brake module and wirings
+- To check ASRU board, connectors and wirings
+58 F0191 & F0192 LCEADON assist main brake - To check brake micro switch
+59 F0196 LCEADON detects sliding distance exceeded - To check brake condition
+60 F0213 No floor nodes found - To check LON network wirings
+- Reset shaft power network
+61 F0215 ETSL current detection failure
+- To check ETSL board, connectors and wirings (board replacement)
+- To check clearance between ETSL switches and magnets
+- To check encoder condition and wirings
+62 F0216 ETSL speed comparison test failure - To check clearance between ETSL switches and magnets
+63 F0217 LCEETSL emergency terminal speed limiting event - To check clearance between ETSL switches and magnets
+64 F0218 ETSL setup switch change - To check clearance between ETSL switches and magnets
+- To check encoder alignment and pressure
+65 F0221 ETSL unreasonable speed change detected  - To check ETSL board, connectors and wirings
+66 F0226 ETSL encoder pulses missing - To check ETSL board, connectors and wirings (ETSL board trip)
+- To check ASRU board, connectors and wirings (ETSL3)
+ HYPERCARE  
+67 F0226 with Releveling failures F0081 and Start failed 
+F0051
+- To check door contacts condition and alignment at Level XX (Same level)
+- To check car door contact condition and alignment (Multiple levels)
+68 F0227 ETSL switch failure - To check ETSL board, connectors and wirings
+69 F0243 Ultra rope condition monitoring first level alarm - To check LCEOPT and LCECMD boards, connectors and wirings
+70 F0244 Governor tension weight switch actuated - To check governor tension weight switch position
+71 F0245 Ultra rope condition monitoring second level alarm - To check LCEOPT and LCECMD boards, connectors and wirings
+72 F0248 Reset elevator if man trap condition exists - To check AMD board, connectors and wirings 
+73 F0248 with Safety circuit broken F0021 - Serviceman related fault (Info)
+74 F0249 Elevator failed to make auto recovery for 3 attempts - To check AMD board, connectors and wirings
+75 F0251 Main floor counter reached the count of 500 000 - To reset NVRAM parameter 1-99
+76 F0252 Close end is continuously active after F0283 recheck 
+trigger
+- To check door close end switch
+- To check DIP switch setting in CCBN
+77 F0260 Monitoring of RBO device failed - To check RBO
+78 F0261 Photocell input fault
+- To check photocell condition (if fault is continuously active even when passengers go out and 
+in)
+- (If fault happened few times, its just an info)
+79 F0268 Main contactor in drive fails to pick but start permit is 
+changing - To check drive system contactor
+80 F0276 Emergency battery stress test failed - To check car top battery 
+81 F0283 Door close end signal fault - To check door close limit magnetic switch 
+82 F1005 Roll call failed - To check LCEFCB and LCEFOB boards, connectors and wirings at Level XX (Same level)
+83 F1010 LON/CAN network mismatch - To check LON network
+84 F1200 LCE can't see CEB in the front side COP - To check LCECEB and LCECOB boards, connectors and wirings
+- To check LCECCB board, connectors and wirings
+85 F1300 LCE can't see COB in the front side COP - To check LCECOB board, connectors and wirings
+86 F1400 FCB board missing
+- To check LCEFCB board, connectors and wirings at Level XX (Same level)
+- To check LCEGTW board, connectors and wirings (Multiple levels)
+- To check shaft network module
+- To check LCEHAS board, connectors and wirings (if happen at top most or bottom floor)
+87 F1600 LCE can't see GTW board F1600 (With F1010) - To check LCEGTW board, connectors and wirings
+88 F1700 LCE can't see front side option board OPT - To check LCEOPT board, connectors and wirings
+89 F1800 LCE can't see front side car interface board - To check LCECIB board, connectors and wirings
+90 F1900 Fire status controller - To check the dip switches condition inside the repeater
+91 F1901 Fire status controller - To check the dip switches condition inside the repeater
+92 F2200 LCE can't see CEB in the rear side COP - To check LCECOB and LCECEB boards, connectors and wirings
+93 F2700 LCE can't see rear side option board OPT - To check LCEOPT board, connectors and wirings
+94 F3700 LCE can't see destination control operating panel front 
+side
+- To check DOP connection at Level XX (Index)
+- To check shaft network module
+95 F5200 LCE can't see destination elevator identifier front side
+- To check LCEGTWO board, connectors and wirings
+- To check shaft network modules
+- To check LCEFCB board, connectors and wirings at Level XX
+96 F5500 LCE can't see KCEFCB G19 (EN81-20 supervision) - To check KCEFCB board, connectors and wirings
+97 F5600 LCE can't see KCEFOB G13 (EN81-20 supervision) - To check KCEFOB board, connectors and wirings
+98 F5900 Unknown event - To check shaft network modules timer
+NOTES
+Door faults on same level - Landing door problem
+Door faults on multiple levels - Car door problem, possible issue with Car Door Cam
+Car position fault/ Releveling failure/ Position lost on same level -  magnet (KDL), leveling vane 
+(KDM), HIPO plate (KDH)
+Car position fault/ Releveling failure/ Position lost on multiple levels - cigar switch (KDL), 
+oscillator switch (KDM), HIPO reader (KDH)
+FRD mode at one elevator in group - To check LCEOPT
+ HYPERCARE  
+No. Fault code Sub code Description Recommended Actions
+1 F0102 2002 Drive power stage fault - To check LWD and main contactor wirings (201:1 201:3 201:4)
+2 F0102 2076 Drive power stage fault - To check drive power supply
+3 F0103 1002 Braking resistor supervision*** - To check braking resistor wiring
+4 F0104 2003 Motor over temperature - To check motor condition
+5 F0104 2004 Motor over temperature - To check motor condition
+6 F0104 3057 Motor over temperature - To check motor condition
+7 F0105 2007 Power supply fault - To check power supply cable on DCBG
+- To check LCEREC board, connectors and wirings (for V3F25)
+8 F0106 1001 Speed supervision counter - To check encoder condition and wirings
+9 F0106 1039 Brake feedback fault*  - To check brake wiring and condition (Fault can happen when power resets)
+10 F0106 2110 Movement risk supervision** - To check machinery brake adjustment
+11 F0106 2111 Drive fault movement risk** - To check brake controller wiring and connection
+12 F0107 2008 Load weighing fault - To check LWD sensor condition
+13 F0107 3020 Load weighing fault - To check LWD sensor condition
+14 F0107 3074 Load weighing fault - To check LWD sensor condition
+15 F0108 2009 Motor/Tacho faults (Speed difference) - To check encoder condition and wirings
+- To check encoder wheel pressure
+16 F0108 2013 Motor/Tacho faults
+- To check encoder condition and wirings
+- To adjust tacho-test voltage
+- To check HCBN board (for V3F25)
+17 F0108 3004 Torque controller fault - To check brake and tacho voltage
+18 F0108 2069 Motor/Tacho faults (Motor torque 
+supervision)
+- To check encoder condition and wirings
+- To check KTW factor parameter
+19 F0108 3062 Drive output voltage warning***
+- To check power supply
+- To reconfirm motor parameters 6_81, 6_84 to 6_86 on LCECPU
+- To check encoder condition and wirings
+20 F0108 3084 Motor torque supervision fault** - To check encoder condition and wirings
+21 F0109 3 Drive position lost
+- To check 77 switches signal (Multiple levels - V3F25)
+- To check clearance between 77 magnets and switches at Level XX (Same level - 
+V3F25)
+22 F0109 1012 77 switch fault* - To check 77 switches signal  (Multiple levels)
+- To check clearance between 77 magnets and switches at Level XXX (Same level)
+23 F0109 3005 Drive position lost*
+- To check clearance between HIPO plate and reader at Level XX (Same level - 
+KDH)
+- To check HIPO reader signal (Multiple levels - KDH)
+- To check 61/77 switches signal (Multiple levels - V3F25)
+- To check clearance between 61/77 vanes/magnets and switches at Level XX 
+(Same level - V3F25)
+- To check cartop encoder pressure
+- To check encoder and resolver cable
+24 F0109 3049 77 U/N  position warning**
+- To check 77U/N switches signal (Multiple levels)
+- To check clearance between 77U/N magnets and switches at Level XX (Same 
+level)
+25 F0109 3065 Drive position lost 77U/N error**
+- To check 77U/N switches signal (Multiple levels)
+- To check clearance between 77U/N magnets and switches at Level XX (Same 
+level)
+26 F0109 3066 Drive position lost 61U/N error**
+- To check 61 U/N switches signal (Multiple levels)
+- To check 61 U/N switches wiring (Multiple levels) 2nd level
+- To check clearance between 61 U/N vanes and switches at Level XX (Same level)
+27 F0110 2014 Drive temperature fault** - To check drive temperature/condition
+28 F0110 3010 Drive temperature warning** - To check drive temperature/condition
+29 F0120 2016 Start sequence fault** - To check main contactor wirings (201:1 201:3 201:4)
+30 F0120 2020 Start sequence fault
+- To check main contactor wirings (201:1 201:3 201:4) (Multiple levels)
+- To check clearance between door interlock roller and door cam/coupler at Level 
+XX (Same level)
+31 F0120 2039 Start sequence fault (Main contactor 
+feedback fault)
+- To check main contactor wirings (201:1 201:3 201:4) (for V3F25)
+- To check machinery brake (for V3F25)
+32 F0120 2079 Brake controller fault - To check brake module and wirings
+33 F0124 1012 77 U/N position warning
+- To check 77U/N switches signal (Multiple levels)
+- To check clearance between 77U/N magnets and switches at Level XX (Same 
+level)
+34 F0124 1013 77S switch faults - To check 77S switches signal (Multiple levels)
+- To check clearance between 77S magnets and switches at Level XX (Same level)
+35 F0124 1014 Drive feedback fault 61U stuck fault* - To check clearance between HIPO plate and reader at Level XX (Same level)
+- To check HIPO reader signal (Multiple levels)
+36 F0124 1015 Drive feedback fault 61N stuck fault* - To check clearance between HIPO plate and reader at Level XX (Same level)
+- To check HIPO reader signal (Multiple levels)
+Drive Faults
+ HYPERCARE  
+37 F0124 1016 Drive feedback fault 30 stuck fault* - To check clearance between HIPO plate and reader at Level XX (Same level)
+- To check HIPO reader signal (Multiple levels)
+38 F0124 1017 Drive feedback fault B30 stuck fault* - To check clearance between HIPO plate and reader at Level XX (Same level)
+- To check HIPO reader signal (Multiple levels)
+39 F0124 1018 Drive feedback fault 61U missing* - To check clearance between HIPO plate and reader at Level XX (Same level)
+- To check HIPO reader signal (Multiple levels)
+40 F0124 1019 Drive feedback fault 61N missing* - To check clearance between HIPO plate and reader at Level XX (Same level)
+- To check HIPO reader signal (Multiple levels)
+41 F0124 1020 Drive feedback fault 30 missing*
+- To check clearance between HIPO plate and reader at Level XX (Same level)
+- To check HIPO reader signal (Multiple levels)
+Door zone not in expected location. This was most likely a byproduct of the car 
+getting lost due to the F0108-2013
+42 F0124 1021 Drive feedback fault B30 missing* - To check clearance between HIPO plate and reader at Level XX (Same level)
+- To check HIPO reader signal (Multiple levels)
+43 F0124 1032 77S switch Faults - To check clearance between 77S switch and magnets 
+44 F0124 2057 Motor encoder fault - To check encoder condition and wirings
+45 F0124 2105 Drive feedback fault - To check brake module and wirings
+- To check brake power circuit
+46 F0124 3008 Drive feedback 61U warning* - To check clearance between HIPO plate and reader at Level XX (Same level)
+- To check HIPO reader signal (Multiple levels)
+47 F0124 3009 Drive feedback 61N warning*
+- To check clearance between HIPO plate and reader at Level XX (Same level)
+- To check HIPO reader signal (Multiple levels)
+- To check car encoder wheel condition and alignment 
+48 F0124 3014 Drive feedback fault*
+- To check car encoder wheel condition and alignment (Multiple levels)
+- To check root cause at Level XX (guide rail joint) (Same level)
+- To ensure the parameter 6_34 matches car encoder pulley diameter used on 
+site
+49 F0124 3015 Drive feedback missing floor code*
+- To check clearance between HIPO plate and reader at Level XX (Same level)
+- To check HIPO reader signal (Multiple levels)
+- To check travelling cable connection
+50 F0124 3016 Drive feedback wrong floor code* - To check clearance between HIPO plate and reader at Level XX (Same level)
+- To check HIPO reader signal (Multiple levels)
+51 F0124 3053 Drive feedback fault
+- To check clearance between HIPO plate and reader at Level XX (NTS - Same 
+level) (KDH)
+- To check clearance between NTS switches and magnets (Multiple levels) (KDL)
+- To check car encoder wheel condition and alignment (Multiple levels) (KDH)
+52 F0124 3060 NTS switch position - To check clearance between NTS switches and magnets
+53 F0124 3061 NTS switch fault - To check clearance between NTS switches and magnets
+54 F0124 3068 DCBH - LCECPU communication fault
+- To check groundings and cable between DCBH and LCECPU (KDH)
+- To check groundings and cable between DCBG and LCECPU (KDM)
+- To check groundings and cable between DCBL and LCECPU (KDL)
+- To check cable screening/shielding between DCBH and LCECPU (KDH)
+- To check cable screening/shielding between DCBH and LCECPU (KDM)
+- To check cable screening/shielding between DCBL and LCECPU (KDL)
+55 F0124 3071 Drive feedback fault - To check motor power factor (cos φ) and Electro Magnetic Field (EMF) value
+- Serviceman related fault (Info)
+56 F0124 1046 Brake sequence fault - To check brake module and wirings
+57 F0126 1060 Brake control board (BCX)
+specific failure feedback - To check brake control board wirings and connectors
+58 F0126 1047 Brake sequence fault - To check brake module and wirings
+59 F0126 1063 Brake status failed - To check brake wiring and connectors
+60 F0126 2072 Brake test failed - To check brake wiring and adjustment (KDM)
+61 F0126 2104 Low brake current fault - To check brake wirings, connectors and brake module
+- To check brake contacts
+62 F0126-2104 & F0124-2105 Drive feedback 
+fault - To check brake power circuit
+63 F0126 3058 Brake sequence fault - To check brake module and wirings
+64 F0126 3059 Brake sequence fault - To check brake wirings
+65 F0126 3075 Brake sequence fault - To check brake module and wirings
+66 F0126 6023 Brake sequence fault - To check automatic brake test
+- To check parameter 6_30
+67 F0130 1037 Drive warning motor bridge control - To check ASRU board, connectors and wirings
+68 F0130 1038 Main contactor control fault - To check main contactor wirings (201:1 201:3 201:4)
+69 F0130 2014 Drive warning heatsink temperature - To check drive temperature/condition
+70 F0130 2065 NTS input active*
+- To check clearance between HIPO plate and reader at Level XX (Same level)
+- To check HIPO reader signal (Multiple levels)
+- To check INU ISU board, connectors and wirings
+71 F0130 2066 Braking chopper fault* - To check A51 ISU RMIO board brake chopper connector (X22/11)
+72 F0130 3054 Motor fan Fault - To check motor fan
+73 F0130 3055 Drive warning - To check drive fan 
+74 F0130 5000 Drive warning fault ^ - To check fault data 1 and 2 on site
+- Upgrade E-link software version to 4.4.0 and above
+75 F0130 5000-7 Drive warning motor bridge saturation ^ - To check drive wirings
+ HYPERCARE  
+76 F0130 5000-9 Drive warning DC-Link undervoltage ^ - To check drive wirings
+77 F0130 5000-10 Drive input phase unbalance ^
+- Info (Common faults for new sites)
+- To check power supply
+- To check main contactor wirings (201:1 201:3 201:4)
+78 F0130 5000-14 Motor bridge overtemp ^ - To check drive temperature/condition
+79 F0130 5000-30 Drive warning fault ^ - To check drive wirings
+80 F0130 5000-41 Drive warning motor bridge temperature ^ - To check motor condition
+81 F0130 5000-43 Drive warning ^ - To check encoder condition and wirings
+82 F0130 5000-44 Drive warning ^ - To check encoder condition and wirings
+83 F0130 5000-75 Drive warning ^ - To check drive (KR module) condition
+84 F0130 5000-76 Drive warning ^ - To check drive (KR module) condition
+85 F0130 5000-101 Drive warning line bridge overcurrent ^ - To check drive IGBT and drive wiring
+86 F0130 5000-102 Drive warning dynamic brake failure ^ - To check dynamic braking contactor
+- To check brake and encoder cable shielding
+87 F0130 5000-104 Drive warning signal comparison fault ^ - To check main contactor wirings (201:1 201:3 201:4)
+88 F0130 5000-105 Drive warning signal comparison fault ^ - To check brake condition
+- To set parameter 6-43 to value 1
+89 F0130 5000-141 Drive warning Line bridge IGBT temp ^
+- To check drive temperature/condition
+- To check drive fan 
+- To check contactor wirings
+90 F0130 5000-203 Drive interface communication lost ^ -To check cable between drive and DCBG
+91 F0130 5000-211 PWM signal fault ^ - To check auxliary contactors wirings 201:3 and 201:4
+92 F0130 5000-208 PWM enable missing at stop ^ - To check LCECPU X4 connector and wiring 
+- To check auxliary contactors wirings 201:3 and 201:4
+93 F0130 5000-213 Line bridge synchronization failure ^ - To check power supply
+- To check main contactor wirings (201:1 201:3 201:4)
+94 F0130 5000-224 Dynamic braking fault ^ - To check brake controllers and adjustment
+- To check drive
+95 F0130 5100 Drive warning ^ - To check fault data 1 and 2 on site
+- Upgrade E-link software version to 4.4.0 and above
+96 F0130 5100-33 Drive fan speed warning ^ - To check drive fan
+97 F0130 5100-34 Drive fan lifetime exceeded ^ - To check drive fan
+98 F0130 5100-103 Drive warning fault** - To check drive I/O board, connectors, and wirings
+99 F0130 5100-220 Motor bridge overcurrent warning  ^ - To check brake module, brake coil and brake wirings 
+100 F0130 5100-225 Drive warning IGBT temperature too high ^ - To check INU IGBT drive temperature and condition
+101 F0130 5100-226 Drive warning AFE IGBT temperature too 
+high ^ - To check AFE IGBT drive temperature and condition
+102 F0130 5511-1 Drive warning fault* - To check all the auxiliary and main contactors wirings
+103 F0130 5511-3 ISU IGBT overtemperature (KDH)* - To check ISU IGBT drive temperature and condition
+104 F0130 5511-7 Drive warning fault*
+- To check main power supply
+- To check main contactor wirings
+- To check ISU drive module
+105 F0130 5511-14 Drive warning * - Serviceman related fault (Info)
+106 F0130 5512 Drive warning fault* - To check fault data 1 and 2 on site
+- Upgrade E-link software version to 4.4.0 and above
+107 F0130 5901-2 Drive warning DC overvolt*
+- Info  (Common faults for new sites)
+- To check power supply
+- To check main contactor wirings (201:1 201:3 201:4)
+108 F0130 5902 Drive warning fault* - To check fault data 1 and 2 on site
+- Upgrade E-link software version to 4.4.0 and above
+109 F0130 5904-5 Drive warning fault* - To check RTAC board, connectors and wirings
+110 F0130 5905-12 Drive warning (APBU Batt failure)* - To check ABPU battery voltage
+111 F0130 5906 Drive warning fault* - To check fault data 1 and 2 on site
+- Upgrade E-link software version to 4.4.0 and above
+112 F0130 5906-3 Drive warning fault*
+- Info Only ETSL2 (Elevator stays in NOR mode)
+- To check brake module and wirings
+- To check main contactor wirings (201:1 201:3 201:4)
+- To check RTAC board, connectors and encoder signal
+113 F0130 5906-5 Drive warning fault* - To check ASRU board, connectors and wirings
+- RDF run, Info (Elevator stays in NOR mode)
+114 F0130 5906-7 Drive warning fault* - To check drive inverter module (GINT PCB board)
+- To check INU board, connectors and wirings
+115 F0130 5908-2 Drive warning fault* - To check RRIA board, connectors and wirings (KDH)
+116 F0130 5909 Drive warning fault* - To check fault data 1 and 2 on site
+- Upgrade E-link software version to 4.4.0 and above
+117 F0130 5909-2 Drive warning fault* - To check RRIA board, connectors and wirings (KDH)
+118 F0130 5909-3 Drive warning fault* - To check RRIA board, connectors and wirings (KDH)
+119 F0131 4000 Drive interface communication lost - To check drive communication cable
+120 F0133 0440 KDHN drive fault ⁰
+- To check fault data 1 and 2 on site
+- Can be ignored if the elevator remains in service
+- Upgrade E-link software version to 4.4.0 and above
+121 F0133 0440-0 KDHN drive fault ⁰ - Can be ignored if the elevator remains in service
+(Power went away abruptbly during drive stop/inspection)
+ HYPERCARE  
+122 F0133 0440-1 KDHN drive fault ⁰ - Check ISU and INU communication cable
+- Info only (Nuisance fault if not accompanied by another fault)
+123 F0133 0422-5 KDHN drive fault ⁰ (Encoder feedback fault) - To check encoder condition and wirings
+- To check motor encoder cable connection to DCBH
+124 F0133 10421-6 KDHN drive fault ⁰ - To check brake module and wirings
+- To check drive panel wiring
+Notes :
+*** KDL Faults 
+⁰ KDHN
+* KDH Faults
+^ KDM Faults
+** KDM & KDL Faults
+HYPERCARE  
+No. Fault code Description Recommended Actions
+1 F1006 TTS line failure - To check TTS cables and connectors at KCEMSC board
+2 F1011 Car door contact open during drive
+- To check door contacts condition and alignment at Level 
+XX (Same level)
+- To check car door contact condition and alignment 
+(Multiple levels)
+3 F1194 Unintended movement warning - To check brake condition and wirings
+4 F1605 Car door closing timeout
+- To check door contacts condition and alignment at Level 
+XX (Same level)
+- To check car door contact condition and alignment 
+(Multiple levels)
+5 F1613 Car light failed - To check lighting condition
+6 F1630 Battery stress test fault - To check battery (depending on data 3)
+7 F1702 Start time out - To check root cause at Level XX (Same level)
+8 F1706 Landing door lock timeout - To check clearance between door interlock roller and door 
+cam/coupler at Level XX (Same level)
+9 F1706 & F1702 - To check door contacts condition and alignment at Level 
+XX (Same level)
+10 F1819 LWD device broken - To check LWD device operation
+KCE Faults
+HYPERCARE  
+No. Fault code EN Fault code ANSI Data 1 Data 2 Description Recommended Actions
+1 1 12* (21) 1 - Step sag (lower)
+ANSI: Lower Level Step Switches
+- To check steps condition in the lower step sag switch area
+- To check lower step sag switch clearance
+2 2 1 - - Step chain tension lower - To check step chain and switch condition
+3 5 2,9* (17) 1 - Step run-in horizontal (lower) - To check lower combplate condition
+4 7 5 2 - Step sag (upper)
+ANSI: Upper Level Step Switches
+- To check  steps condition in the upper step sag switch area
+- To check upper step sag switch clearance
+5 8 2,9* (1) 2 - Step run-in horizontal (upper) - To check upper combplate condition
+6 14 - - - Drive chain broken - To check drive chain tension
+7 15 - - - Phase Monitor - To check power supply phase and relay condition
+8 16 - - - Inverter fault - To check fault code on inverter
+9 19 7,13* (22) 1 1 Skirt switches (lower left) - To check lower left skirt switch
+10 19 7,13* (23) 1 2 Skirt switches (lower right) - To check lower right skirt switch
+11 19 7,13* (6) 2 1 Skirt switches (upper left) - To check upper left skirt switch
+12 19 7,13* (7) 2 2 Skirt switches (upper right) - To check upper right skirt switch
+13 21 - 1 - Step upthrust (lower) - To check steps condition in the lower step upthrust switch area 
+- To check lower upthrust switch clearance and connections
+14 21 - 2 - Step upthrust (upper) - To check steps condition in the upper step upthrust switch area  
+- To check upper upthrust switch clearance and connections
+15 28 - - - Auxiliary brake lift fault - To check auxiliary brake switch condition
+16 34 42 - - Underspeed - To check encoder speed sensor
+17 47 60 - - DIP Switch settings unequal - To check DIP switch setting on EMB board
+18 48 - - - IO unequal (speed monitor) - To check signal cable and shielding
+19 49 - - - Communication fault speed monitor - To check signal cable and shielding
+20 58 33 1 - Missing step device (lower)
+- To check clearance between the step roller and the lower missing 
+step sensor
+- To check lower missing step sensor condition
+- To check lower step gap light (2nd level)
+21 59 34 2 - Missing step device (upper)
+- To check clearance between the step roller and the upper missing 
+step sensor
+- To check upper missing step sensor condition
+- To check upper step gap light (2nd level)
+22 62, 63 37 - 1 Handrail pre-warning (5%) - To check left spring tension
+23 62, 63 37 - 2 Handrail pre-warning (5%) - To check right spring tension
+24 62, 63 38 - 1 Handrail pre-warning (15%) - To check left handrail traction condition
+- To check configuration parameter FC62 & 63
+25 62, 63 38 - 2 Handrail pre-warning (15%) - To check right handrail traction condition
+- To check configuration parameter FC62 & 63
+26 64 62 - - Braking distance too long - To check brake adjustment
+27 68 - Brake lift sensor - To check brake sensor wiring
+- To check brake contactor
+28 75 - - - Step band cover displacement - To check step band cover and sensor clearance
+29 82 - - - Light beam defective - To check light beam condition
+30 99 99 - - Power loss - To check power supply
+31 - 50 - - Missing start signal - Info - ESC not properly start (building power issue)
+32 - 56 - - K14 not released - To check K14 contactor
+33 - 57 - - K14 De-energized - To check K14 contactor
+34 - 2,9* (27) 1 1 Step Run-In vertical (lower left) - To check lower combplate condition
+35 - 2,9* (28) 1 2 Step Run-In vertical (lower right) - To check lower combplate condition
+36 - 2,9* (10) 2 1 Step Run-In vertical (upper left) - To check upper combplate condition
+37 - 2,9* (11) 2 2 Step Run-In vertical (upper right) - To check upper combplate condition
+38 84,85,86,87* (74,75) - - Brake backup time fault - To check brake wiring
+*Fault code on Konesupport not tally with Fault code list (Ref: AS-51.05.007)
+DATA 1 1 LOWER
+DATA 1 2 UPPER
+DATA 2 1 LEFT
+DATA 2 2 RIGHT
+Escalator Faults
+Notes
+HYPERCARE  
+Drive Faults Date Prepared by Approved by Notes
+Revision 1 4/26/2021 Anis Insyirah, 
+Operations Analysis Engineer
+Ian Mah, 
+Hypercare Manager
+Revision 2 5/12/2021 Anis Insyirah, 
+Operations Analysis Engineer
+Ian Mah, 
+Hypercare Manager
+Car position fault, Car door contact 
+bouncing, F0007, F0025, F0071, F0082, 
+F0221
+Revision 3 5/27/2021 Anis Insyirah, 
+Operations Analysis Engineer
+Ian Mah, 
+Hypercare Manager
+F0077,F0081,F0083,F0245,F0248,F0249,F01
+06-1001
+Revision 4 6/10/2021 Anis Insyirah, 
+Operations Analysis Engineer
+Ian Mah, 
+Hypercare Manager F0082, F0124-3016,F0130-5906
+Revision 5 6/22/2021 Anis Insyirah, 
+Operations Analysis Engineer
+Ian Mah, 
+Hypercare Manager
+Drive system malfunction, F0146,F0217, 
+F0104-2004
+Revision 6 8/23/2021 Anis Insyirah, 
+Operation Analysis Engineer
+Ian Mah,
+Hypercare Manager
+F0150,F0151, F0169,F0189, 
+F0190,F0213,F0124-1013,F0126-2072,F0130-
+1038
+Revision 7 9/27/2021 Anis Insyirah, 
+Junior Operation Analysis Engineer 
+Ian Mah,
+Hypercare Manager
+F0072-F0075, F0095, F0145,F0106-
+1039,F0124, F0130-1037
+Revision 8 10/22/2021 Anis Insyirah, 
+Junior Operation Analysis Engineer 
+Ian Mah,
+Hypercare Manager
+F0046, F0081, F0102-2002,F0109-
+3049&3066, F0124-1020,F0124-
+3008&3009,F0124-3014,F0126-3059, F0130-
+5000
+Revision 9 11/15/2021 Anis Insyirah, 
+Junior Operation Analysis Specialist 
+Ian Mah,
+Hypercare Manager
+Start permit relay failure, F0077, F0172, 
+F0102-2076, F0130-5000
+Revision 10 12/20/2021 Anis Insyirah, 
+Junior Operation Analysis Specialist 
+Ian Mah,
+Hypercare Manager
+F0108-2009,F0124-2057, F0130-5000, F0130-
+5511
+Revision 11 1/3/2022 Anis Insyirah, 
+Junior Operation Analysis Specialist 
+Ian Mah,
+Hypercare Manager F0218, F0124-3071, F0130-5000-203
+Revision 12 2/11/2022 Anis Insyirah, 
+Junior Operation Analysis Specialist 
+Ian Mah,
+Hypercare Manager
+F0023. F0025, F0044, F0077, F0082, F0083, 
+F1400, F0130-3054
+Revision 13 3/11/2022 Anis Insyirah, 
+Junior Operation Analysis Specialist 
+Ian Mah,
+Hypercare Manager
+F0077, F0189,F0190, F0248, F0107-2008, 
+F0130-5905-12
+Revision 14 4/15/2022 Anis Insyirah, 
+Junior Operation Analysis Specialist 
+Ian Mah,
+Hypercare Manager F0036, F0276, F0104-3057, F0130-5000-101
+Revision 15 6/2/2022 Anis Insyirah, 
+Junior Operation Analysis Specialist 
+Ian Mah,
+Hypercare Manager
+Car door contact bouncing, F0046, F0081, 
+F0226, F0108-3084, F0130-5909-3
+Revision 16 7/14/2022 Anis Insyirah, 
+Junior Operation Analysis Specialist 
+Ian Mah,
+Hypercare Manager
+Door zone failure, F0110-2014, F0110-3010, 
+F0130-5100-34, F0130-5100-225
+Revision 17 8/15/2022 Anis Insyirah, 
+Junior Operation Analysis Specialist 
+Ian Mah,
+Hypercare Manager
+F0104-2003, F0130-5000-10, F0130-5000-
+141, F0130-5000-213 
+Revision 18 10/17/2022 Anis Insyirah, 
+Junior Operation Analysis Specialist 
+Ian Mah,
+Hypercare Manager
+F0042, F0106-2111, F0124-(1014-1021), 
+F0124-3068, F0124-3008, F0124-3009, 
+F0130-2014, F0130-5909-2
+Revision 19 1/9/2023 Anis Insyirah, 
+Junior Operation Analysis Specialist 
+Ian Mah,
+Hypercare Manager F0226, F0106-2110, F0131-4000
+Revision 20 3/16/2023 Anis Insyirah, 
+Junior Operation Analysis Specialist 
+Ian Mah,
+Hypercare Manager
+F0196, F1005, F0105-2007, F0107-3074, 
+F0130-5000-43
+Revision 21 10/20/2023 Hani Haziqah, 
+Operation Analysis Engineer
+Ian Mah,
+Hypercare Manager
+F0008, F0191 & F0192, F0215, F0243, F1005, 
+F1200, F5200, F5500, F5600, F0103-1002, 
+F0109-1012, F0130-3055, F0130-5000-76,
+Revision 22 11/27/2023 Hani Haziqah, 
+Operation Analysis Engineer
+Ian Mah,
+Hypercare Manager
+F0216, F0260, F2700, F0109-3005, F0130-
+2065
+Revision 23 12/21/2023 Hani Haziqah, 
+Operation Analysis Engineer
+Ian Mah,
+Hypercare Manager
+F0025 and F0058, F0026, F0036, F1300, 
+F0130-5100-33, F1819
+Revision 24 2/1/2024 Hani Haziqah, 
+Operation Analysis Engineer
+Ian Mah,
+Hypercare Manager
+F0124-3014, F0124-3053, F0109-1012, 
+F0109-3005
+Revision 25 2/22/2024 Hani Haziqah, 
+Operation Analysis Engineer
+Ian Mah,
+Hypercare Manager
+F0268, F1900, F1700
+ESC EN: 19, 21, 28, (46,49), (58,59)
+Revision 26 2/29/2024 Hani Haziqah, 
+Operation Analysis Engineer
+Ian Mah,
+Hypercare Manager
+Drive time supervision (EMC), F0130-5100
+ESC EN: (62,63)
+HYPERCARE  
+Revision 27 3/14/2024 Hani Haziqah, 
+Operation Analysis Engineer
+Ian Mah,
+Hypercare Manager F0022, F0152, F0120-2016, F0120-2039
+Revision 28 3/27/2024 Hani Haziqah, 
+Operation Analysis Engineer
+Ian Mah,
+Hypercare Manager
+F0108-3084, F0126-2104 & F0124-2105, 
+F0133-0440, F1011, F1630, F1702, F1706 & 
+F1702
+ESC EN: (82)
+Revision 29 4/26/2024 Hani Haziqah, 
+Operation Analysis Engineer
+Ian Mah,
+Hypercare Manager
+F0108-3062, F0130-5000-75, F0130-5000-
+102  
+ESC EN: (48)
+Revision 30 5/30/2024 Hani Haziqah, 
+Operation Analysis Engineer
+Ian Mah,
+Hypercare Manager
+F0023, F0110, F0130-2065, F0133-0440,   
+F0133-0440-0, ESC EN: (62,63)
+ESC ANSI: (50)
+Revision 31 7/19/2024 Hani Haziqah, 
+Operation Analysis Engineer
+Ian Mah,
+Hypercare Manager F0120-2020, F0130-2066, F0130-5000-224
+Revision 32 8/1/2024 Hani Haziqah, 
+Operation Analysis Engineer
+Ian Mah,
+Hypercare Manager
+F0124-2105, F3700, F0227
+ESC EN: (5,8)
+Revision 33 8/29/2024 Hani Haziqah, 
+Operation Analysis Engineer
+Ian Mah,
+Hypercare Manager
+F0021, F0151, F3700, F0124-3015, F0126-
+3058, F0126-3075, F0130-5909-3
+ESC EN: 1, 7, 16, 47, 58, 59, 64, 75 - ANSI: 56, 
+(2,9)
+Revision 34 9/12/2024 Hani Haziqah, 
+Operation Analysis Engineer
+Ian Mah,
+Hypercare Manager F2200, F0133-10421-6
+Revision 35 11/7/2024 Hani Haziqah, 
+Operation Analysis Engineer
+Ian Mah,
+Hypercare Manager
+F1613
+ESC EN: 2, ANSI 57, (74,75)
+Revision 36 11/21/2024 Hani Haziqah, 
+Operation Analysis Engineer
+Ian Mah,
+Hypercare Manager F0126, F0126-1047, F0126-2104, F0109-3
+Revision 37 12/19/2024 Hani Haziqah, 
+Operation Analysis Engineer
+Ian Mah,
+Hypercare Manager
+F0095, F0105-2007, F0130-5512, F0130-
+5908-2, F0133-10421-6 
+ESC EN: 34
+Revision 38 2/20/2025 Hani Haziqah, 
+Operation Analysis Engineer
+Ian Mah,
+Hypercare Manager
+F0218, F0244, F1200, F5200, F0124-3014, 
+F0126-1063, F0126-2104, F0130-5000-30, 
+F0130-5000-208, F0130-5100-220, F0130-
+5100-225, F1605
+ESC EN:49
+Revision 39 4/23/2025 Hani Haziqah, 
+Operation Analysis Engineer
+Ian Mah,
+Hypercare Manager
+F0023, F0076, F0251, F1800, F0124-3068, 
+F0130-5000-75, F0130-5000-76, F0130-5000-
+211
+Revision 40 5/22/2025 Hani Haziqah, 
+Operation Analysis Engineer
+Ian Mah,
+Hypercare Manager
+F0181 & F0182, F0283, F0124-1046, F0130-
+5100-226
+ESC EN: 15
+Revision 41 6/19/2025 Hani Haziqah, 
+Operation Analysis Engineer
+Ian Mah,
+Hypercare Manager
+F0026, F5200, F5900, F0124-3071, F0130-
+5511-7, F0130-5904-5, F0130-5906-3, F1006
+ESC EN: 99
+Revision 42 7/3/2025 Hani Haziqah, 
+Operation Analysis Engineer
+Ian Mah,
+Hypercare Manager
+F0062, F0152, F0109-3005, F0130-5000-102, 
+F0130-5000, F0130-5100, F0130-5906, 
+F0133-0440, F1194
+Revision 43 7/17/2025 Hani Haziqah, 
+Operation Analysis Engineer
+Ian Mah,
+Hypercare Manager F0025, F0252, F0130-5000-105
+Revision 44 7/31/2025 Hani Haziqah, 
+Operation Analysis Engineer
+Ian Mah,
+Hypercare Manager
+F0102-2002, F0133-422-5, F1706
+ESC EN: 68
+Revision 45 8/22/2025 Hani Haziqah, 
+Operation Analysis Engineer
+Ian Mah,
+Hypercare Manager
+F0025, F1400, F3700, F0109-3005, F0130-
+5901-2, F0130-5906-7, F0133-0440-1
+ESC EN: 68
+Revision 46 9/18/2025 Hani Haziqah, 
+Operation Analysis Engineer
+Ian Mah,
+Hypercare Manager F0126-1060, F0130-5906-7
+Revision 47 10/23/2025 Hani Haziqah, 
+Operation Analysis Engineer
+Ian Mah,
+Hypercare Manager F0130-5100-103
+Revision 48 12/10/2025 Hani Haziqah, 
+Operation Analysis Engineer
+Ian Mah,
+Hypercare Manager
+F0036, F1400, F0130-5000-44
+ESC: 14
