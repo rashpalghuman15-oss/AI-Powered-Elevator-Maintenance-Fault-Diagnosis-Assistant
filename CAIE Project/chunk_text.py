@@ -27,6 +27,9 @@ print("Creating embeddings (this may take a minute)...")
 model = SentenceTransformer('all-MiniLM-L6-v2')
 embeddings = model.encode(chunks)
 
+np.save("Data/embeddings.npy", embeddings)
+print(f"Saved embeddings to Data/embeddings.npy")
+
 print(f"Created {len(embeddings)} embeddings")
 
 # Step 4: Create search index
@@ -46,6 +49,11 @@ with open("Data/chunks.txt", "w", encoding="utf-8") as f:
 print("✅ Index created successfully!")
 print(f"   Saved: Data/vector_index.faiss ({index.ntotal} vectors)")
 print(f"   Saved: Data/chunks.txt ({len(chunks)} chunks)")
+
+with open("Data/chunks.txt", "w", encoding="utf-8") as f:
+    for chunk in chunks:
+        f.write(chunk + "\n")
+print(f"✅ Saved {len(chunks)} chunks to Data/chunks.txt")
 
 # Quick test
 print("\n🧪 Quick test: Searching for 'door fault'...")
