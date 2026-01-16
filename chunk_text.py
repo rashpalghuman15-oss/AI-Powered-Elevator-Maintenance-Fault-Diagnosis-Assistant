@@ -50,9 +50,19 @@ print("✅ Index created successfully!")
 print(f"   Saved: Data/vector_index.faiss ({index.ntotal} vectors)")
 print(f"   Saved: Data/chunks.txt ({len(chunks)} chunks)")
 
+with open("Data/chunks.txt", "w", encoding="utf-8") as f:
+    for chunk in chunks:
+        f.write(chunk + "\n")
+print(f"✅ Saved {len(chunks)} chunks to Data/chunks.txt")
+
 # Quick test
 print("\n🧪 Quick test: Searching for 'door fault'...")
 query = "door fault"
 query_embedding = model.encode([query])
 distances, indices = index.search(np.array(query_embedding), 1)
 print(f"   Found chunk {indices[0][0]} with distance {distances[0][0]:.3f}")
+
+with open("Data/chunks.txt", "w", encoding="utf-8") as f:
+    for chunk in chunks:
+        f.write(chunk + "\n")
+print(f"✅ Saved {len(chunks)} chunks to Data/chunks.txt")

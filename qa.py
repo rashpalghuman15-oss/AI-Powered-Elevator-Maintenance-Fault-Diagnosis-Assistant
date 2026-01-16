@@ -1,46 +1,90 @@
 import numpy as np
-from sentence_transformers import SentenceTransformer
+from qa_simple import ask_question
 import os
+import re
 
-# qa.py - AI Elevator Maintenance Assistant (No FAISS version)
+# qa.py - AI Elevator Maintenance Assistant (No sentence-transformers version)
 print("🤖 Loading Elevator Maintenance Assistant...")
 
-
-# Load the search model (AI Component 1)
-model = SentenceTransformer('all-MiniLM-L6-v2')
-
-# Try to load chunks and embeddings
-try:
-    # Load chunks
-    with open("Data/chunks.txt", "r", encoding="utf-8") as f:
-        chunks = [line.strip() for line in f]
-    
-    # Try to load embeddings if they exist
-    if os.path.exists("Data/embeddings.npy"):
-        embeddings = np.load("Data/embeddings.npy")
-        print(f"✅ Loaded {len(chunks)} chunks and embeddings")
-    else:
-        # Generate embeddings on the fly (first time)
-        print("Creating embeddings...")
-        embeddings = model.encode(chunks)
-        np.save("Data/embeddings.npy", embeddings)
-        print(f"✅ Created and saved embeddings for {len(chunks)} chunks")
+def load_data():
+    """Load chunks and create simple embeddings"""
+    try:
+        # Load chunks
+        with open("Data/chunks.txt", "r", encoding="utf-8") as f:
+            chunks = [line.strip() for line in f if line.strip()]
         
-except FileNotFoundError:
-    print("⚠️ Data files not found. Using fallback mode.")
-    chunks = []
-    embeddings = None
+        # Create simple TF-IDF like embeddings
+        if chunks:
+            # Create vocabulary from chunks
+            vocabulary = {}
+            chunk_vectors = []
+            
+            for chunk in chunks:
+                words = re.findall(r'\b\w+\b', chunk.lower())
+                word_count = {}
+                for word in words:
+                    if len(word) > 2:  # Ignore short words
+                        if word not in vocabulary:
+                            vocabulary[word] = len(vocabulary)
+                        word_id = vocabulary[word]
+                        word_count[word_id] = word_count.get(word_id, 0) + 1
+                
+                # Create vector for this chunk
+                vector = np.zeros(len(vocabulary))
+                for word_id, count in word_count.items():
+                    vector[word_id] = count
+                chunk_vectors.append(vector)
+            
+            embeddings = np.array(chunk_vectors)
+            print(f"✅ Loaded {len(chunks)} chunks with {len(vocabulary)} unique words")
+            return chunks, embeddings, vocabulary
+        else:
+            return [], None, None
+            
+    except FileNotFoundError:
+        print("⚠️ Data files not found. Using fallback mode.")
+        return [], None, None
+
+chunks, embeddings, vocabulary = load_data()
+
+def create_query_vector(query, vocabulary):
+    """Convert query to vector using same vocabulary"""
+    if vocabulary is None:
+        return None
+    
+    words = re.findall(r'\b\w+\b', query.lower())
+    vector = np.zeros(len(vocabulary))
+    
+    for word in words:
+        if len(word) > 2 and word in vocabulary:
+            word_id = vocabulary[word]
+            vector[word_id] += 1
+    
+    return vector
 
 def search_manual_simple(query, top_k=3):
-    """Simple similarity search without FAISS"""
-    if embeddings is None or len(chunks) == 0:
+    """Simple similarity search"""
+    if embeddings is None or len(chunks) == 0 or vocabulary is None:
         return []
     
-    # Convert query to embedding
-    query_embedding = model.encode([query])
+    # Convert query to vector
+    query_vector = create_query_vector(query, vocabulary)
+    if query_vector is None or np.sum(query_vector) == 0:
+        return []
     
     # Simple cosine similarity
-    similarities = np.dot(embeddings, query_embedding.T).flatten()
+    # Normalize vectors
+    chunk_norms = np.linalg.norm(embeddings, axis=1)
+    query_norm = np.linalg.norm(query_vector)
+    
+    if query_norm == 0:
+        return []
+    
+    # Avoid division by zero
+    chunk_norms = np.where(chunk_norms == 0, 1, chunk_norms)
+    
+    # Calculate similarities
+    similarities = np.dot(embeddings, query_vector) / (chunk_norms * query_norm)
     
     # Get top k indices
     if len(similarities) > top_k:
@@ -52,7 +96,7 @@ def search_manual_simple(query, top_k=3):
     # Get results
     results = []
     for idx in top_indices:
-        if idx < len(chunks):
+        if idx < len(chunks) and similarities[idx] > 0.1:  # Threshold
             results.append({
                 "text": chunks[idx],
                 "similarity": float(similarities[idx])
@@ -152,10 +196,10 @@ def ask_question(query):
         3. Consult the physical maintenance manual
         4. Contact a certified technician if unsure
         
-        **Note:** The AI search system is currently loading. Please check back in a moment."""
+        **Note:** AI semantic search is analyzing the manual..."""
         return fallback_response, []
     
-    print(f"Found {len(search_results)} relevant sections")
+    print(f"Found {len(search_results)} relevant sections (similarity: {search_results[0]['similarity']:.2f})")
     
     # Step 2: Generate answer (AI Component 2)
     answer, sources = generate_answer(query, search_results)
@@ -165,7 +209,7 @@ def ask_question(query):
 # For local testing
 if __name__ == "__main__":
     print("\n" + "="*50)
-    print("🛗 ELEVATOR MAINTENANCE ASSISTANT (No FAISS)")
+    print("🛗 ELEVATOR MAINTENANCE ASSISTANT")
     print("="*50)
     
     while True:
