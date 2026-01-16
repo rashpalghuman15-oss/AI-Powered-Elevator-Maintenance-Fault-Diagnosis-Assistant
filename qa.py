@@ -1,50 +1,69 @@
 import numpy as np
-import faiss
 from sentence_transformers import SentenceTransformer
+import os
 
+# qa.py - AI Elevator Maintenance Assistant (No FAISS version)
 print("🤖 Loading Elevator Maintenance Assistant...")
+
 
 # Load the search model (AI Component 1)
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
-# Load the search index
-print("Loading search index...")
-index = faiss.read_index("Data/vector_index.faiss")
+# Try to load chunks and embeddings
+try:
+    # Load chunks
+    with open("Data/chunks.txt", "r", encoding="utf-8") as f:
+        chunks = [line.strip() for line in f]
+    
+    # Try to load embeddings if they exist
+    if os.path.exists("Data/embeddings.npy"):
+        embeddings = np.load("Data/embeddings.npy")
+        print(f"✅ Loaded {len(chunks)} chunks and embeddings")
+    else:
+        # Generate embeddings on the fly (first time)
+        print("Creating embeddings...")
+        embeddings = model.encode(chunks)
+        np.save("Data/embeddings.npy", embeddings)
+        print(f"✅ Created and saved embeddings for {len(chunks)} chunks")
+        
+except FileNotFoundError:
+    print("⚠️ Data files not found. Using fallback mode.")
+    chunks = []
+    embeddings = None
 
-# Load the chunks
-with open("Data/chunks.txt", "r", encoding="utf-8") as f:
-    chunks = [line.strip() for line in f]
-
-print(f"✅ System ready! Loaded {len(chunks)} manual sections")
-
-def search_manual(query, top_k=3):
-    """
-    AI Component 1: Search for relevant manual sections
-    """
+def search_manual_simple(query, top_k=3):
+    """Simple similarity search without FAISS"""
+    if embeddings is None or len(chunks) == 0:
+        return []
+    
     # Convert query to embedding
     query_embedding = model.encode([query])
     
-    # Search the index
-    distances, indices = index.search(np.array(query_embedding), top_k)
+    # Simple cosine similarity
+    similarities = np.dot(embeddings, query_embedding.T).flatten()
     
-    # Get the actual chunks
+    # Get top k indices
+    if len(similarities) > top_k:
+        top_indices = np.argpartition(similarities, -top_k)[-top_k:]
+        top_indices = top_indices[np.argsort(-similarities[top_indices])]
+    else:
+        top_indices = np.argsort(-similarities)
+    
+    # Get results
     results = []
-    for i, idx in enumerate(indices[0]):
+    for idx in top_indices:
         if idx < len(chunks):
             results.append({
                 "text": chunks[idx],
-                "similarity": float(1 / (1 + distances[0][i])),  # Convert distance to similarity score
-                "distance": float(distances[0][i])
+                "similarity": float(similarities[idx])
             })
     
     return results
 
 def generate_answer(query, search_results):
-    """
-    AI Component 2: Simple rule-based answer generator (no LLM needed)
-    """
+    """AI Component 2: Rule-based answer generator"""
     if not search_results:
-        return "I couldn't find information about this issue in the manual. Please consult a certified technician."
+        return "I couldn't find information about this issue in the manual. Please consult a certified technician.", []
     
     # Extract keywords from query
     query_lower = query.lower()
@@ -61,17 +80,17 @@ def generate_answer(query, search_results):
     else:
         issue_type = "general issue"
     
-    # Build answer from search results
+    # Build answer
     answer_parts = []
     
-    # Safety warning (always included)
+    # Safety warning (always first)
     answer_parts.append("⚠️ **SAFETY FIRST:** Always turn off power before inspection. Wear safety gear.")
     
     # Add the most relevant manual section
     best_result = search_results[0]
     answer_parts.append(f"**From manual:** {best_result['text'][:300]}...")
     
-    # Add diagnostic steps based on issue type
+    # Add diagnostic steps
     answer_parts.append(f"\n**For {issue_type}, follow these steps:**")
     
     steps = {
@@ -114,34 +133,39 @@ def generate_answer(query, search_results):
     answer_parts.append("- Safety circuit is faulting")
     answer_parts.append("- Electrical components are damaged")
     
-    return "\n\n".join(answer_parts)
+    return "\n\n".join(answer_parts), search_results
 
 def ask_question(query):
-    """
-    Main function: Search + Generate answer
-    """
+    """Main function: Search + Generate answer"""
     print(f"\n🔍 Searching for: '{query}'")
     
     # Step 1: Search manual (AI Component 1)
-    search_results = search_manual(query, top_k=2)
+    search_results = search_manual_simple(query, top_k=2)
     
     if not search_results:
-        return "No relevant information found.", []
+        # Fallback response
+        fallback_response = """⚠️ **SAFETY FIRST:** Always turn off power and wear protective gear.
+        
+        **General Maintenance Steps:**
+        1. Perform visual inspection of the affected area
+        2. Check all safety switches and circuits
+        3. Consult the physical maintenance manual
+        4. Contact a certified technician if unsure
+        
+        **Note:** The AI search system is currently loading. Please check back in a moment."""
+        return fallback_response, []
     
     print(f"Found {len(search_results)} relevant sections")
     
     # Step 2: Generate answer (AI Component 2)
-    answer = generate_answer(query, search_results)
+    answer, sources = generate_answer(query, search_results)
     
-    return answer, search_results
+    return answer, sources
 
-# Simple command-line interface
+# For local testing
 if __name__ == "__main__":
     print("\n" + "="*50)
-    print("🛗 ELEVATOR MAINTENANCE ASSISTANT")
-    print("="*50)
-    print("Type your elevator issue below (or 'quit' to exit)")
-    print("Example: 'door not closing properly'")
+    print("🛗 ELEVATOR MAINTENANCE ASSISTANT (No FAISS)")
     print("="*50)
     
     while True:
@@ -158,9 +182,3 @@ if __name__ == "__main__":
             print("💡 MAINTENANCE ADVICE:")
             print("="*50)
             print(answer)
-            
-            print("\n" + "-"*30)
-            print("📖 Sources found in manual:")
-            for i, source in enumerate(sources):
-                print(f"\nSource {i+1} (relevance: {source['similarity']:.2f}):")
-                print(f"{source['text'][:150]}...")
